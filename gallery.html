@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        @font-face {
+            font-family: 'Highland Perk';
+            src: url("highlandperk.ttf") format("truetype");
+        }
+        html, body {
+            margin: 0;
+            background: #111;
+        }
+        .gallery-header {
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 3rem;
+            background: rgba(17, 17, 17, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+        .gallery-header h1 {
+            font-family: 'Highland Perk', cursive;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #f3ead9;
+            margin: 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #f3ead9;
+            border: 1px solid rgba(243, 234, 217, 0.4);
+            border-radius: 4px;
+            padding: 0.6rem 1.2rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .back-link:hover {
+            background-color: #f3ead9;
+            color: #111;
+        }
+        .masonry {
+            column-count: 4;
+            column-gap: 1rem;
+            padding: 1.5rem 2rem 4rem;
+        }
+        .masonry img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            break-inside: avoid;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+        .masonry img:hover {
+            transform: scale(1.02);
+            filter: brightness(1.08);
+        }
+        @media (max-width: 1100px) {
+            .masonry { column-count: 3; }
+        }
+        @media (max-width: 750px) {
+            .masonry {
+                column-count: 3;
+                column-gap: 0.4rem;
+                padding: 1rem 0.6rem 3rem;
+            }
+            .masonry img {
+                margin-bottom: 0.4rem;
+                border-radius: 2px;
+            }
+            .gallery-header { padding: 1.2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-header">
+        <h1>Jules Mercier</h1>
+        <a href="photographer.html" class="back-link">&larr; Back</a>
+    </div>
+    <div class="masonry">
+        <img src="https://images.unsplash.com/photo-1668952135119-388d443497a5?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1602284387587-f396b5cdeb06?q=80&w=2588&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1567613968432-c0c3bc92223c?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1567704971014-a42cbd8acf38?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1648922798217-f5d339cb7aa6?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1653257340129-148be674836c?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="">
+        <img src="https://images.unsplash.com/photo-1653152901445-212407c9d206?q=80&w=1343&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="">
+        <img src="https://i.pinimg.com/736x/b3/d0/45/b3d045f0f50963a1c96e4bbd711d6d73.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/eb/68/47/eb68473434d6077366b81ac7449a8323.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/93/2d/40/932d40872a173d2ee8ada0f5e4a1e451.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/4e/49/12/4e4912cb01e8d3febe06859b9dd96bf0.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/18/41/3a/18413aaf70c2033d92b7c728566e189a.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/06/44/7e/06447e0ad7f7a3cae555c22929483e48.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/e0/70/e8/e070e871742d7354e5c90130b1bb0c2f.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/99/d9/b1/99d9b1b3444406e47a4635592fb35ada.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/b9/fa/2a/b9fa2a7d66aa54c28adf9bdd89b6b4c8.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/66/57/ac/6657ac5e8ddfbe8990dcb5a620473799.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/8a/9c/99/8a9c996ea4041b9bccaa3582684016f3.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/9f/35/af/9f35afe0d38a9ed9fbb24e01df234657.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/7d/40/ed/7d40edfa16ee2d3cf0f91d8a22dd655d.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/7d/ee/08/7dee0861453705c260853917affc3f8c.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/16/30/52/163052c5468a777933109fa6dda74a44.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/c4/61/e9/c461e99e177f40f1142b18a06e386599.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/ca/54/8a/ca548a08265da26f22b9689a729ffb05.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/f7/13/3b/f7133bc0e065476fff7287f36816a4e7.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/dd/54/2c/dd542c5e7dc6b8659497bb2543d67a3f.jpg" alt="">
+        <img src="https://i.pinimg.com/1200x/60/7e/cf/607ecf36d3f11bffaf2b408966d3e86b.jpg" alt="">
+        <img src="https://i.pinimg.com/736x/e3/fb/c6/e3fbc6e39746844bb5dc726fccd9657d.jpg" alt="">
+    </div>
+</body>
+</html>
