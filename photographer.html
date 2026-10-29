@@ -111,6 +111,10 @@
             font-size: 3.6rem;
             line-height: -2;
             letter-spacing: -4px;
+            color: #bbb;
+            transition: color 0.6s ease;
+        }
+        .punchline .char.typed {
             color: #000;
             transition: color 0.6s ease;
         }
@@ -120,6 +124,9 @@
             letter-spacing: normal;
         }
         body.dark .punchline {
+            color: #555;
+        }
+        body.dark .punchline .char.typed {
             color: #f3ead9;
         }
         .navbar {
@@ -699,20 +706,27 @@
             <button type="submit">Send</button>
         </form>
     </div>
-    <p class="punchline">Every frame tells a    <span class="accent"> story</span> worth remembering...</p>
+    <p class="punchline" id="punchline">Every frame tells a    <span class="accent"> story</span> worth remembering...</p>
     <script>
         const isMobile = window.matchMedia('(max-width: 768px)').matches;
         const scrollLinkedEls = [];
 
         function buildChars(el) {
-            const text = el.textContent;
-            el.textContent = '';
-            text.split('').forEach((ch) => {
-                const span = document.createElement('span');
-                span.className = 'char';
-                span.textContent = ch;
-                el.appendChild(span);
+            const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+            const textNodes = [];
+            while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+            textNodes.forEach((textNode) => {
+                const frag = document.createDocumentFragment();
+                textNode.textContent.split('').forEach((ch) => {
+                    const span = document.createElement('span');
+                    span.className = 'char';
+                    span.textContent = ch;
+                    frag.appendChild(span);
+                });
+                textNode.parentNode.replaceChild(frag, textNode);
             });
+
             return el.querySelectorAll('.char');
         }
 
@@ -758,6 +772,7 @@
         setupTypewriter(document.getElementById('specialty1'), true);
         setupTypewriter(document.getElementById('specialty2'), true);
         setupTypewriter(document.getElementById('specialty3'), true);
+        setupTypewriter(document.getElementById('punchline'));
 
         if (isMobile && scrollLinkedEls.length) {
             function updateScrollTyping() {
