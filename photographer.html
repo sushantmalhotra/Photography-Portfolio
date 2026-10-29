@@ -116,7 +116,7 @@
         }
         .punchline .char.typed {
             color: #000;
-            transition: color 0.6s ease;
+            transition: color 0.08s linear;
         }
         .punchline .accent {
             font-family: 'Highland Perk', cursive;
@@ -316,7 +316,7 @@
         }
         .about-text .char.typed {
             color: #000;
-            transition: color 0.6s ease;
+            transition: color 0.08s linear;
         }
         body.dark .about-text {
             color: #555;
@@ -342,7 +342,7 @@
         }
         .experience-text .char.typed {
             color: #000;
-            transition: color 0.6s ease;
+            transition: color 0.08s linear;
         }
         body.dark .experience-text {
             color: #555;
@@ -369,7 +369,7 @@
         }
         .specialties .char.typed {
             color: #000;
-            transition: color 0.6s ease;
+            transition: color 0.08s linear;
         }
         body.dark .specialties {
             color: #555;
@@ -752,7 +752,7 @@
                     chars[i].classList.add('typed');
                     i++;
                     if (i >= chars.length) clearInterval(interval);
-                }, 8);
+                }, 18);
             }
 
             const observer = new IntersectionObserver((entries) => {
